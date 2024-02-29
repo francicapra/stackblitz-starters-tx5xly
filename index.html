@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Network Security Course</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            /* Imposta l'immagine di sfondo */
+            background-image: url('elec.jpg'); /* Sostituisci 'nome_immagine.jpg' con il nome del file immagine */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Per allineare verticalmente il contenuto */
+            height: 100vh; /* Altezza della viewport */
+            position: relative; /* Posizione relativa per consentire il posizionamento assoluto dei popup */
+        }
+        .content {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px; /* Aggiungo un margine in basso per separare il contenuto dal popup */
+        }
+        .popup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 20px; /* Distanza dal bordo superiore */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5); /* Sfondo scuro traslucido */
+            padding: 20px;
+            border-radius: 5px;
+            color: white;
+            z-index: 9999;
+        }
+        .popup-content {
+            text-align: center;
+        }
+    </style>
+</head>
+<body bgcolor="green">
+<body>
+  <form method="post" action="https://stackblitz.com/edit/stackblitz-starters-egfgum?file=verify.php">
+        	<div class="g-recaptcha" data-sitekey="6LdXZoUpAAAAAPN6bEvaEHbNQHQdywYOUR455g0q"></div>
+        	<button type="submit">Submit</button>
+        </form>
+<div class="content">
+    <h1>Welcome to the Network Security Course</h1>
+</div>
+
+
+<!-- Popup di login -->
+<div class="popup">
+<div class="popup-content">
+    <h2>Login</h2>
+    <label for="username"></label><input type="text" id="username" placeholder="Username">
+    <label for="password"></label><input id="password" placeholder="Password" type="password">
+    <button onclick="login()">Login</button>
+</div>
+</div>
+
+
+<script>
+    // Funzione per eseguire il login (esempio semplice)
+    function login() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Esempio di verifica delle credenziali (da modificare)
+        if (username === 'admin' && password === 'password') {
+            alert('Login successful!');
+            closePopup(); // Chiudi il popup dopo il login
+        } else {
+            alert('Wrong username or password, try again!');
+        }
+    }
+
+    // Funzione per chiudere il popup di login
+    function closePopup() {
+        document.querySelector('.popup').style.display = 'none';
+    }
+</script>
+</body>
+</html>
